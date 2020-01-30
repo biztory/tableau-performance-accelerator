@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Biztory.EnterpriseToolkit.TableauServer</RootNamespace>
+        <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+        <ReleaseVersion>0.9</ReleaseVersion>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <DefaultItemExcludes>$(DefaultItemExcludes);*.log</DefaultItemExcludes>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Serilog" Version="2.9.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+        <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+        <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="Combinatorics" Version="1.1.0.19" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\tableau-server-api-unified\tableau-server-api-unified.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Models\" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Models\test-filter-configuration-view-scope.json" />
+      <None Remove="Models\test-filter-configuration-vanilla.json" />
+      <None Remove="Models\test-filter-configuration-user-scope.json" />
+      <None Remove="Models\test-filter-configuration.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="Models\example-microcube-configuration.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="mmmtools-core">
+            <HintPath>..\..\mmmtools-core\mmmtools-core\bin\Release\netcoreapp2.0\mmmtools-core.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>

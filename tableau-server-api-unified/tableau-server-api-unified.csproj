@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Biztory.EnterpriseToolkit.TableauServerUnifiedApi</RootNamespace>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Rest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\tableau-server-backup\bin\Debug\netcoreapp2.1\win-x64\publish\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="RestSharp.Newtonsoft.Json" Version="1.5.1" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <Reference Include="RestSharp">
+      <HintPath>..\..\InterWorks.Tableau.Server\InterWorks.Tableau.ServerReferences\RestSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Biztory.EnterpriseToolkit.TableauServerLocalizer.Console</RootNamespace>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+        <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+        <ReleaseVersion>0.9</ReleaseVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    </PropertyGroup>
+    <PropertyGroup>
+        <DefaultItemExcludes>$(DefaultItemExcludes);*.log;tableau-server*.json</DefaultItemExcludes>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <CustomCommands>
+          <CustomCommands>
+            <Command>
+              <type>AfterBuild</type>
+              <command>dotnet publish --self-contained -c Release -r "win-x64"</command>
+              <workingdir>${ProjectDir}</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+            <Command>
+              <type>AfterBuild</type>
+              <command>dotnet publish --self-contained -c Release -r "osx-x64"</command>
+              <workingdir>${ProjectDir}</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+            <Command>
+              <type>AfterBuild</type>
+              <command>zip -X -r ./${ProjectName}-osx-x64.zip . -x *.zip -x *.lic -x *.log -x "*.DS_Store"</command>
+              <workingdir>${TargetDir}/osx-x64/publish</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+            <Command>
+              <type>AfterBuild</type>
+              <command>zip -X -r ./${ProjectName}-win-x64.zip . -x *.zip -x *.lic -x *.log -x "*.DS_Store"</command>
+              <workingdir>${TargetDir}/win-x64/publish</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+            <Command>
+              <type>AfterBuild</type>
+              <command>dotnet publish --self-contained -c Release -r "linux-x64"</command>
+              <workingdir>${ProjectDir}</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+            <Command>
+              <type>AfterBuild</type>
+              <command>zip -X -r ./${ProjectName}-linux-x64.zip . -x *.zip -x *.lic -x *.log -x "*.DS_Store"</command>
+              <workingdir>${TargetDir}/linux-x64/publish</workingdir>
+              <externalConsole>True</externalConsole>
+            </Command>
+          </CustomCommands>
+        </CustomCommands>
+        <DebugType>
+        </DebugType>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\biztory-licensing\biztory-licensing.csproj" />
+        <ProjectReference Include="..\tableau-hypercache\tableau-performance-accelerate.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="mmmtools-core">
+            <HintPath>..\..\mmmtools-core\mmmtools-core\bin\Release\netcoreapp2.0\mmmtools-core.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+          <HintPath>bin\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Args" Version="1.2.1" />
+        <PackageReference Include="NetFusion.Settings" Version="3.2.153" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.1" />
+        <PackageReference Include="Serilog" Version="2.9.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+        <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+        <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Remove="global.json" />
+        <None Remove="tableau-server-hypercache-20181114.log" />
+        <None Remove="tableau-server-hypercache-console-20181114.log" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,56 @@
+﻿{
+    "scope": {
+        "projects": {
+            "regex": ".*",
+            "include": [],
+            "exclude": []
+        },
+        "workbooks": {
+            "regex": "Superstore.*",
+            "include": ["World Indicators"],
+            "exclude": ["Superstore Sales & Profit"]
+        },
+        "views": {
+          "regex": ".*",
+          "include": [],
+          "exclude": []
+      },
+        "users": {
+          "regex": ".*",
+          "include": [],
+          "exclude": []
+      },
+        "groups": {
+          "regex": "Filtering users by groups is not yet implemented",
+          "include": ["Filtering users by groups is not yet implemented"],
+          "exclude": ["Filtering users by groups is not yet implemented"]
+        }    
+    },
+    "filters": [],
+  "user-filters": [],
+  "parameters": [
+        {
+            "name": "some dim",
+            "datatype": "string",
+            "values": [
+                "this",
+                "that"
+            ]
+        },
+        {
+            "name": "some number",
+            "datatype": "integer",
+            "values": [
+                1000,
+                2000
+            ]
+        },
+        {
+            "name": "some decimal",
+            "datatype": "float",
+            "values": [
+                3.14,
+                2.33
+            ]
+        }    ]
+}

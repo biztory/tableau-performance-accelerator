@@ -1,0 +1,77 @@
+﻿{
+    "scope": {
+        "projects": {
+            "regex": ".*",
+            "include": [],
+            "exclude": []
+        },
+        "workbooks": {
+            "regex": ".*",
+            "include": [],
+            "exclude": []
+        },
+        "views": {
+            "regex": ".*",
+            "include": [],
+            "exclude": []
+        },
+        "users": {
+            "regex": ".*",
+            "include": [],
+            "exclude": []
+        }
+    },
+    "filters": [
+        {
+            "name": "Region",
+            "datatype": "string",
+            "values": [
+              "North",
+              "South",
+              "East",
+              "West"
+            ]
+        },
+        {
+            "name": "Customer Segment",
+            "datatype": "string",
+            "values": [
+                "Consumer",
+                "Enterprise"
+            ]
+        },
+        {
+            "name": "Ship Mode",
+            "datatype": "string",
+            "values": [
+                "Ground",
+                "Air"
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "name": "some dim",
+            "datatype": "string",
+            "values": [
+                "this",
+                "that"
+            ]
+        },
+        {
+            "name": "some number",
+            "datatype": "integer",
+            "values": [
+                1000,
+                2000
+            ]
+        },
+        {
+            "name": "some decimal",
+            "datatype": "float",
+            "values": [
+                3.14,
+                2.33
+            ]
+        }    ]
+}
