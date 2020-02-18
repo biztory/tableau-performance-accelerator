@@ -2,14 +2,8 @@
 using Biztory.EnterpriseToolkit.TableauServerUnifiedApi.Rest.Client;
 using Biztory.EnterpriseToolkit.TableauServerUnifiedApi.Rest.Model;
 using Microsoft.Extensions.Logging;
-using MMMTools.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Security;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Biztory.EnterpriseToolkit.TableauServer
 {

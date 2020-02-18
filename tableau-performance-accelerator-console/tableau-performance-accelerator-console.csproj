@@ -60,8 +60,7 @@
         </DebugType>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\biztory-licensing\biztory-licensing.csproj" />
-        <ProjectReference Include="..\tableau-hypercache\tableau-performance-accelerate.csproj" />
+        <ProjectReference Include="..\tableau-performance-accelerator\tableau-performance-accelerate.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="mmmtools-core">
