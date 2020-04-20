@@ -63,9 +63,6 @@
         <ProjectReference Include="..\tableau-performance-accelerator\tableau-performance-accelerate.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <Reference Include="mmmtools-core">
-            <HintPath>..\..\mmmtools-core\mmmtools-core\bin\Release\netcoreapp2.0\mmmtools-core.dll</HintPath>
-        </Reference>
         <Reference Include="Microsoft.Extensions.FileProviders.Physical">
           <HintPath>bin\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
         </Reference>
